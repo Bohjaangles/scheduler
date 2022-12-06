@@ -57,13 +57,14 @@ export function getInterview(state, appInterview) {
 export function getInterviewersForDay(state, day) {
   let interviewers = []
   let dayObj = {};
-  
+  // console.log('state in getinterveriwers', state);
   state.days.forEach(jour => {
     if (jour.name === day) {
       dayObj = jour
     }
   })
 
+  console.log('dayobj', dayObj)
   if (Object.keys(dayObj).length === 0) return [];
   if (Object.keys(state.interviewers).length === 0) return [];   
   dayObj.interviewers.forEach(dayinterviewer => {
@@ -72,7 +73,7 @@ export function getInterviewersForDay(state, day) {
   })
    
   if (dayObj.name && interviewers.length > 0) {
-    console.log('intervioers: ', interviewers);
+    // console.log('intervioers: ', interviewers);
     return interviewers;
   }
   return [];
