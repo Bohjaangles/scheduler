@@ -10,18 +10,15 @@ export function getAppointmentsForDay(state, day) {
     }
   })
   if (Object.keys(dayObj).length === 0) return [];
-   let appointmentsArr = Object.values(state.appointments)  
-  //  console.log('AR: ', appointmentsArr);   
+   let appointmentsArr = Object.values(state.appointments)    
     appointmentsArr.forEach(app => {
       dayObj.appointments.forEach(dayApp => {
-        // console.log('dayApp: ', dayApp);
         if (app.id === dayApp) {
           appointments.push(app);
         }
       })
     })
     if (dayObj.name && appointments.length > 0) {
-      // console.log('appontments: ', appointments);
       return appointments;
     }
     return [];
