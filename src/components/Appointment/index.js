@@ -12,7 +12,7 @@ import Error from "./Error";
 
 const Appointment = function(props) {
   // console.log('(index)appointments props: ', props);
-  let student = '';
+  let student = "";
   let interviewerObj = {};
 
   const EMPTY = "EMPTY";
@@ -35,9 +35,6 @@ const Appointment = function(props) {
   );
 
   function save(name, interviewer) {
-    if (!interviewer) {
-      return transition(ERROR_SAVE_NO_INTERVIEWER)
-    }
     const interview = {
       student: name,
       interviewer
