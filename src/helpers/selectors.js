@@ -21,14 +21,14 @@ export function getAppointmentsForDay(state, day) {
       })
     })
     if (dayObj.name && appointments.length > 0) {
-      console.log('appontments: ', appointments);
+      // console.log('appontments: ', appointments);
       return appointments;
     }
     return [];
 }
 
 /* 
-appontments:  [
+appointments:  [
         { id: 1, time: '12pm', interview: null },
         { id: 2, time: '1pm', interview: null },
         {
@@ -44,10 +44,10 @@ export function getInterview(state, appInterview) {
   let returnObj = {}
   // console.log('gI state: ', state);
   // console.log('GI appintervew: ', appInterview);
-  if (appInterview) {
+  if (appInterview && appInterview.interviewer) {
     const intId = appInterview.interviewer.toString();
     returnObj = {...appInterview, interviewer: state.interviewers[intId]}
-    console.log(returnObj);
+    // console.log(returnObj);
     return returnObj;
   }
 
@@ -64,7 +64,7 @@ export function getInterviewersForDay(state, day) {
     }
   })
 
-  console.log('dayobj', dayObj)
+  // console.log('dayobj', dayObj)
   if (Object.keys(dayObj).length === 0) return [];
   if (Object.keys(state.interviewers).length === 0) return [];   
   dayObj.interviewers.forEach(dayinterviewer => {

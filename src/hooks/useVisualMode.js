@@ -6,9 +6,13 @@ const useVisualMode = function(initial) {
   const transition = function(next, replace = false) {
     let newHistory = [...history];
     if (replace) {
-      setHistory([...newHistory.slice(0, -1), next]);
+      // console.log('pre set history', history)
+      setHistory([...newHistory.slice(0, -1), next]); 
+      // console.log('post set history', history)
     } else {
+
       setHistory([...newHistory, next]);
+      // console.log('ELSE post set history', history)
     }
   };
 
