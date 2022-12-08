@@ -42,16 +42,16 @@ npm run storybook
 ```
 ## Screenshots of app in use
 
-['Highlighting testing coverage report'](https://github.com/Bohjaangles/scheduler/blob/master/public/images/testing-coverage-report.png)
+!['Highlighting testing coverage report'](https://github.com/Bohjaangles/scheduler/blob/master/public/images/testing-coverage-report.png)
 
-['Default view when app is opened'](https://github.com/Bohjaangles/scheduler/blob/master/public/images/Monday-with-appts.png)
+!['Default view when app is opened'](https://github.com/Bohjaangles/scheduler/blob/master/public/images/Monday-with-appts.png)
 
-['Switched from Monday to Friday and there is an empty appointment slot'](https://github.com/Bohjaangles/scheduler/blob/master/public/images/empty-spot-for-appt.png)
+!['Switched from Monday to Friday and there is an empty appointment slot'](https://github.com/Bohjaangles/scheduler/blob/master/public/images/empty-spot-for-appt.png)
 
-['Selected that empty spot and entering in the input fields'](https://github.com/Bohjaangles/scheduler/blob/master/public/images/new-appointment-creation.png)
+!['Selected that empty spot and entering in the input fields'](https://github.com/Bohjaangles/scheduler/blob/master/public/images/new-appointment-creation.png)
 
-['Error handling for appointment creation, if users tries to submit without entering in a name'](https://github.com/Bohjaangles/scheduler/blob/master/public/images/useful-error-1.png)
+!['Error handling for appointment creation, if users tries to submit without entering in a name'](https://github.com/Bohjaangles/scheduler/blob/master/public/images/useful-error-1.png)
 
-['Error handling for appointment creation, if users tries to submit without selecting an interviewer'](https://github.com/Bohjaangles/scheduler/blob/master/public/images/useful-error-2.png)
+!['Error handling for appointment creation, if users tries to submit without selecting an interviewer'](https://github.com/Bohjaangles/scheduler/blob/master/public/images/useful-error-2.png)
 
-['Completed appointment posted'](https://github.com/Bohjaangles/scheduler/blob/master/public/images/new-appt-completed.png)
+!['Completed appointment posted'](https://github.com/Bohjaangles/scheduler/blob/master/public/images/new-appt-completed.png)
