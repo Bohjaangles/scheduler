@@ -4,7 +4,7 @@
 
   Mini project made for educational purposes by me, Russel!
   
-  Key outcomes:
+  Key learning outcomes:
   - Become familiar with React
     - familiarizing with using useState, useEffect
     - familiarizing with using props, prop drilling, components, etc.
@@ -40,7 +40,7 @@ npm test
 ```sh
 npm run storybook
 ```
-## Screenshots of app in use
+## Screenshots of app in use:
 
 
 ## Highlighting testing coverage report
