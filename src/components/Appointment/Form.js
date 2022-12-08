@@ -6,7 +6,6 @@ const Form = function(props) {
   const [error, setError] = useState("");
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
-  // console.log('form props: ', props);
   
   function validate() {
     if (student === "") {

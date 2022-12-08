@@ -24,7 +24,6 @@ const Appointment = function(props) {
   const EDIT = "EDIT";
   const ERROR_SAVE = 'ERROR_SAVE';
   const ERROR_DELETE = 'ERROR_DELETE';
-  const ERROR_SAVE_NO_INTERVIEWER = 'ERROR_SAVE_NO_INTERVIEWER';
 
   if (props.interview) {
     student = props.interview.student;
@@ -61,7 +60,7 @@ const Appointment = function(props) {
   }
 
   return (
-    <article className="appointment" >
+    <article className="appointment" data-testid="appointment" >
       <Header time={props.time} />
       {mode === EMPTY && <Empty onAdd={() => { transition(CREATE); }} />}
       {mode === SHOW && (
@@ -86,10 +85,6 @@ const Appointment = function(props) {
       />}
       {mode === ERROR_SAVE && <Error
         message='There was an error in saving appointment, appointment not saved'
-        onClose={back}
-      />}
-      {mode === ERROR_SAVE_NO_INTERVIEWER && <Error 
-        message="No interviewer selected, please provide both name and select an interviewer"
         onClose={back}
       />}
       {mode === ERROR_DELETE && <Error 
