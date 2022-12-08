@@ -1,7 +1,9 @@
 import React from "react";
 
+
 const Empty = function(props) {
-  return(
+
+  return (
     <main className="appointment__add" >
       <img
         className="appointment__add-button"
@@ -10,7 +12,7 @@ const Empty = function(props) {
         onClick={props.onAdd}
       />
     </main>
-  )
+  );
 };
 
 export default Empty;

@@ -11,7 +11,6 @@ import Error from "./Error";
 
 
 const Appointment = function(props) {
-  // console.log('(index)appointments props: ', props);
   let student = "";
   let interviewerObj = {};
 
@@ -41,23 +40,23 @@ const Appointment = function(props) {
     transition(SAVING);
     props.bookInterview(props.id, interview)
       .then(() => transition(SHOW, true))
-      .catch(() => transition(ERROR_SAVE, true))
-  }
-  
-  const editForm = function() {
-    transition(EDIT);
+      .catch(() => transition(ERROR_SAVE, true));
   }
 
+  const editForm = function() {
+    transition(EDIT);
+  };
+
   const callConfirmDelete = function() {
-    transition(CONFIRM)
-  }
+    transition(CONFIRM);
+  };
 
   const deleteappt = function() {
     transition(DELETING, true);
     props.deleteInterview(props.id, props.interview)
-    .then(() => transition(EMPTY))
-    .catch(() => transition(ERROR_DELETE, true))
-  }
+      .then(() => transition(EMPTY))
+      .catch(() => transition(ERROR_DELETE, true));
+  };
 
   return (
     <article className="appointment" data-testid="appointment" >
@@ -77,7 +76,7 @@ const Appointment = function(props) {
         student={student}
         onSave={save}
         onCancel={back}
-        // onCandel={() => transition(SHOW)}
+      // onCandel={() => transition(SHOW)}
       />}
       {mode === CONFIRM && <Confirm
         onCancel={back}
@@ -87,7 +86,7 @@ const Appointment = function(props) {
         message='There was an error in saving appointment, appointment not saved'
         onClose={back}
       />}
-      {mode === ERROR_DELETE && <Error 
+      {mode === ERROR_DELETE && <Error
         message="there was an error in deleting appointment, appointment not deleted"
         onClose={back}
       />}
@@ -107,14 +106,3 @@ const Appointment = function(props) {
 };
 
 export default Appointment;
-
-
-
-/* 
-if fucky, make props list 
-props:{
-       id: 2
-interview: {student: 'Archie Cohen', interviewer: undefined} 
-     time: "1pm"
-      }
-*/

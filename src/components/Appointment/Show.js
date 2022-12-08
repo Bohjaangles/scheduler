@@ -3,13 +3,13 @@ import React from "react";
 
 const Show = function(props) {
 
-  return(
+  return (
     <main className="appointment__card appointment__card--show">
       <section className="appointment__card-left">
         <h2 className="text--regular">{props.student}</h2>
         <section className="interviewer">
           <h4 className="text--light">Interviewer</h4>
-          <h3 className="text--regular">{props.interviewer.name}</h3> 
+          <h3 className="text--regular">{props.interviewer.name}</h3>
         </section>
       </section>
       <section className="appointment__card-right">
@@ -29,14 +29,7 @@ const Show = function(props) {
         </section>
       </section>
     </main>
-  )
-}
+  );
+};
 
 export default Show;
-
-/* 
-props: {
-        interviewer: {id: 9, name: 'Lindsay Chu', avatar: 'https://i.imgur.com/nPywAp1.jpg'}
-            student: "Archie Cohen"
-        }
-*/

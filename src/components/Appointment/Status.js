@@ -2,8 +2,7 @@ import React from "react";
 
 
 const Status = function(props) {
-  
-  
+
   return (
     <main className="appointment__card appointment__card--status">
       <img
@@ -12,8 +11,8 @@ const Status = function(props) {
         alt="Loading"
       />
       <h1 className="text--semi-bold">{props.message}</h1>
-    </main> 
-  )
+    </main>
+  );
 };
 
 export default Status;
