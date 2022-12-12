@@ -2,7 +2,7 @@ import React from "react";
 import 'components/DayListItem.scss';
 import classNames from "classnames";
 
-const formatSpots = function(props) {
+const formatSpots = function(props) { // Function to render the correct text on the dayListItem
   if (props.spots === 0) {
     return (
       <h3 className="text--light" >no spots remaining</h3>

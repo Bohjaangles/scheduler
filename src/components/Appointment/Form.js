@@ -7,7 +7,7 @@ const Form = function(props) {
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
   
-  function validate() {
+  function validate() { // function to ensure that all required fields are indeed completed prior to submitting the form (saving)
     if (student === "") {
       setError("Student name cannot be blank");
       return;
@@ -20,7 +20,7 @@ const Form = function(props) {
     props.onSave(student, interviewer);
   }
 
-  const reset = () => {
+  const reset = () => { 
     setInterviewer(null)
     setStudent('')
   }

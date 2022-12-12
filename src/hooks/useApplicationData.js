@@ -13,7 +13,7 @@ export default function useApplicationData() {
   const setDay = day => setState({ ...state, day });
 
   useEffect(() => {
-    Promise.all([
+    Promise.all([ // Loads the information used to populate the schedule
       axios.get('/api/days'),
       axios.get('/api/appointments'),
       axios.get('/api/interviewers'),
@@ -23,7 +23,7 @@ export default function useApplicationData() {
       });
   }, []);
 
-  function bookInterview(id, interview) {
+  function bookInterview(id, interview) { // Is triggered when the form is submitted(saved)
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview }
@@ -32,26 +32,26 @@ export default function useApplicationData() {
       ...state.appointments,
       [id]: appointment
     };
-    const days = calculateSpots(state, appointments);
-    return axios.put(`/api/appointments/${id}`, { interview })
-      .then(() => setState(prev => ({ ...prev, appointments, days })));
+    const days = calculateSpots(state, appointments); // changes the spots avail for the day since one was just booked/claimed
+    return axios.put(`/api/appointments/${id}`, { interview }) // update the api
+      .then(() => setState(prev => ({ ...prev, appointments, days }))); // update state
   }
 
-  function calculateSpots(state, changedAppointment) {
-    const dayIndex = state.days.findIndex(day => day.name === state.day);
-    const daysAppointmentsId = state.days[dayIndex].appointments;
+  function calculateSpots(state, changedAppointment) { // Function update the available spots for a day when appointments are booked/deleted
+    const dayIndex = state.days.findIndex(day => day.name === state.day); // select the correct day we want to udpdate
+    const daysAppointmentsId = state.days[dayIndex].appointments; // pull all the appointments for selected day
 
-    const changedAppsDay = daysAppointmentsId.filter(id => !changedAppointment[id].interview);
-    const spots = changedAppsDay.length;
+    const changedAppsDay = daysAppointmentsId.filter(id => !changedAppointment[id].interview); // Selects for empty appointment slots with updated info from param
+    const spots = changedAppsDay.length; // for the amount we are going to update ie. how many spots are available now
 
     const updatedDay = { ...state.days[dayIndex], spots: spots };
     const updatedDays = [...state.days];
     updatedDays.splice(dayIndex, 1, updatedDay);
 
-    return updatedDays;
+    return updatedDays; // for updating the state in the function this is called within
   }
 
-  const deleteInterview = function(id) {
+  const deleteInterview = function(id) { // is triggered when user confirms appoitment delete action
     const appointment = {
       ...state.appointments[id],
       interview: null
@@ -61,8 +61,8 @@ export default function useApplicationData() {
       [id]: appointment
     };
     const days = calculateSpots(state, appointments);
-    return axios.delete(`/api/appointments/${id}`, appointment)
-      .then(() => setState(prev => ({ ...prev, appointments, days })));
+    return axios.delete(`/api/appointments/${id}`, appointment) // update the api
+      .then(() => setState(prev => ({ ...prev, appointments, days }))); // update state
   };
 
   return {
