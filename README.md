@@ -20,8 +20,9 @@
 
 ## Setup
 
+Fork and clone this repo.
 Install dependencies with `npm install`.
-fork and clone this repo for the API used for shceduler app: [scheduler api](https://github.com/Bohjaangles/scheduler-api)
+For the API used for shceduler app: [scheduler api](https://github.com/Bohjaangles/scheduler-api)
 
 ## Dependencies
  - axios
